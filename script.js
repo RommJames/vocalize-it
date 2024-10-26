@@ -19,8 +19,6 @@ function populateVoices(){
     });
      
 }
-populateVoices()
-speakVoice()
 
 function setVoices(){
     voices.forEach(voice => {
@@ -63,3 +61,13 @@ textMessageHTML.addEventListener("keyup", setText);
 stopBtnHTML.addEventListener("click", stopVoice);
 
 speakBtnHTML.addEventListener("click", speakVoice);
+
+// For mobile phone bug fix
+populateVoices()
+setVoices()
+setRate()
+setPitch()
+setText()
+speakVoice()
+stopVoice()
+
