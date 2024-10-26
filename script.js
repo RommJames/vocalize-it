@@ -19,7 +19,7 @@ function populateVoices(){
     });
      
 }
-// populateVoices()
+populateVoices()
 
 function setVoices(){
     voices.forEach(voice => {
