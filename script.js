@@ -20,6 +20,7 @@ function populateVoices(){
      
 }
 populateVoices()
+speakVoice()
 
 function setVoices(){
     voices.forEach(voice => {
