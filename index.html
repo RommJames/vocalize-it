@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocalizeIt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="text-to-speech-logo.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <header>
+            <h1 id="main-title">VocalizeIt </h1>
+            <p id="sub-title">Transform Text to Speech with Ease </p>
+            <a href="https://rommjames.github.io/About-Me/" id="link-portfolio" title="Created By Romm James" target="_blank">
+                <img src="rj-logo-3-nobg.png" alt="logo" id="logo">
+            </a>            
+        </header>        
+        <select name="select-voice" id="voice-option">
+            <option value="default">Select a Voice</option>
+        </select>
+        <div class="slider">
+            <label for="rate"> Rate: </label>
+            <input type="range" id="rate" min="0" max="3" step="0.1" class="slider">
+        </div>
+        <div class="slider">
+            <label for="pitch"> Pitch: </label>
+            <input type="range" id="pitch" min="0" max="2" step="0.1" class="slider">
+        </div>
+        <textarea name="input-text-message" id="text-message" cols="30" rows="7">What do you think about?</textarea>
+        <div id="btns-container">
+            <button id="stop" class="btn">
+                Stop
+            </button>
+            <button id="speak" class="btn">
+                Speak
+            </button>
+        </div>
+    </main>    
+<script src="script.js"></script>
+</body>
+</html>

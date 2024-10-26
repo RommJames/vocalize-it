@@ -1,0 +1,211 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;    
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    /* set padding */
+    padding: 15px;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root{
+    --primary-color: rgb(14, 145, 10);
+    --secondary-color: rgb(64, 175, 30);
+  }
+  /* 10. Width to 100% */
+  
+    input[type="range"], select, textarea{
+        width: 100%;
+    }
+
+    select:focus, textarea:focus{
+        border: 2px solid var(--primary-color);
+        outline: none;
+    }
+
+/* Main */
+main{
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    width: clamp(300px, 100%, 500px);
+    margin: auto;
+    box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+header{
+    position: relative;
+    text-align: left;
+    margin-bottom: 15px;
+    background-color: var(--secondary-color);
+    color: rgb(250, 250, 250);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#link-portfolio:hover > #logo{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#logo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+#sub-title{
+    margin-left: 5px;
+}
+
+/* Slider */
+.slider{
+    padding: 6px 0px;
+}
+
+/* Buttons */
+#btns-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* justify-content: center;  */
+}
+
+.btn{    
+    display: block;
+    flex: 1;
+    flex-basis: 200px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+    color: rgb(223, 213, 213);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.btn:hover, .btn:focus{
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    transform: scale(0.9);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Select Voice */
+select{
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #666666a1;
+}
+
+/* Text Area Message */
+textarea{
+    /* margin: 5px 0px; */
+    padding: 10px;
+    border: 1px solid #666666a1;
+    border-radius: 5px;
+    min-height: 200px;
+    resize: vertical;
+}
+
+/* Slider Customization */
+input {
+    --c: var(--primary-color); /* active color */
+    --g: 3px; /* the gap */
+    --l: 5px; /* line thickness*/
+    --s: 20px; /* thumb size*/
+    
+    /* width: 400px; */
+    height: var(--s); /* needed for Firefox*/
+    --_c: color-mix(in srgb, var(--c), #000 var(--p,0%));
+    -webkit-appearance :none;
+    -moz-appearance :none;
+    appearance :none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  input:focus-visible,
+  input:hover{
+    --p: 25%;
+  }
+  input:active,
+  input:focus-visible{
+    --_b: var(--s)
+  }
+  /* chromium */
+  input[type="range" i]::-webkit-slider-thumb{
+    height: var(--s);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b,var(--l)) inset var(--_c);
+    border-image: linear-gradient(90deg,var(--_c) 50%,#ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -webkit-appearance: none;
+    appearance: none;
+    transition: .3s;
+  }
+  /* Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: var(--s);
+    width: var(--s);
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--_b,var(--l)) inset var(--_c);
+    border-image: linear-gradient(90deg,var(--_c) 50%,#ababab 0) 0 1/calc(50% - var(--l)/2) 100vw/0 calc(100vw + var(--g));
+    -moz-appearance: none;
+    appearance: none;
+    transition: .3s;
+  }
+  @supports not (color: color-mix(in srgb,red,red)) {
+    input {
+      --_c: var(--c);
+    }
+  }
